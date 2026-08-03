@@ -1,5 +1,10 @@
 # ESP32 Climate Sensor (HomeKit)
 
+```
+ESP32_Climate_Sensor/
+└── ESP32_Climate_Sensor.ino
+```
+
 A native Apple HomeKit temperature & humidity sensor built with an **ESP32** and a **DHT22** sensor, powered by the [HomeSpan](https://github.com/HomeSpan/HomeSpan) library. No hubs, no bridges, no third-party apps — the ESP32 pairs directly with the Home app over Wi-Fi.
 
 ## ✨ Features
@@ -33,9 +38,9 @@ A native Apple HomeKit temperature & humidity sensor built with an **ESP32** and
 
 ## 📦 Software Requirements
 
-- [Arduino IDE](https://www.arduino.cc/en/software) or [PlatformIO](https://platformio.org/)
-- [ESP32 board package](https://github.com/espressif/arduino-esp32)
-- Libraries:
+- [Arduino IDE](https://www.arduino.cc/en/software) (2.x recommended)
+- [ESP32 board package](https://github.com/espressif/arduino-esp32) — install via **Boards Manager**
+- Libraries (install via **Library Manager**):
   - [HomeSpan](https://github.com/HomeSpan/HomeSpan)
   - [DHT sensor library](https://github.com/adafruit/DHT-sensor-library) (Adafruit)
   - [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor) (dependency of the DHT library)
@@ -44,19 +49,24 @@ A native Apple HomeKit temperature & humidity sensor built with an **ESP32** and
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/<your-username>/ESP32-Climate-Sensor.git
-   cd ESP32-Climate-Sensor
+   git clone https://github.com/<your-username>/ESP32_Climate_Sensor.git
    ```
 
-2. **Install dependencies**
-   Install `HomeSpan`, `DHT sensor library`, and `Adafruit Unified Sensor` via the Arduino Library Manager (or `platformio.ini` if using PlatformIO).
+2. **Open the sketch**
+   In Arduino IDE: **File → Open** → select `ESP32_Climate_Sensor/ESP32_Climate_Sensor.ino`
 
-3. **Wire the DHT22** to the ESP32 as described above.
+3. **Install dependencies**
+   **Tools → Manage Libraries** → search for and install `HomeSpan`, `DHT sensor library`, and `Adafruit Unified Sensor`.
 
-4. **Flash the firmware**
-   Open `src/main.cpp` in the Arduino IDE (or build with PlatformIO) and upload it to your ESP32.
+4. **Select your board**
+   **Tools → Board** → choose your ESP32 board variant, and select the correct **Port**.
 
-5. **Pair with HomeKit**
+5. **Wire the DHT22** to the ESP32 as described above.
+
+6. **Upload**
+   Click **Upload** (→) in the Arduino IDE.
+
+7. **Pair with HomeKit**
    - Open the Serial Monitor at `115200` baud.
    - Follow the HomeSpan setup prompts to configure Wi-Fi (`W` command) and generate a pairing code.
    - Open the **Home** app on iOS → **Add Accessory** → **More options...** → select your ESP32 device → enter the pairing code shown in the Serial Monitor.
