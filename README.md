@@ -93,3 +93,6 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 - [HomeSpan](https://github.com/HomeSpan/HomeSpan) — HomeKit library for ESP32
 - [Adafruit DHT Sensor Library](https://github.com/adafruit/DHT-sensor-library)
+
+-[https://github.com/innocircuitslab/ESP32-Climate-Sensor/blob/main/esp32_with_dht22_module_connection.png]
+
